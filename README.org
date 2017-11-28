@@ -1,0 +1,7 @@
+* Image Upload App
+
+** Symfony/dumper
+Use with
+#+BEGIN_SRC php
+dump($request->getParams);
+#+END_SRC

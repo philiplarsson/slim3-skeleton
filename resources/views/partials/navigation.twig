@@ -1,0 +1,35 @@
+<div class="container">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+
+      <a class="navbar-item" href="{{ path_for('home') }}">
+        <div class="menu-brand">
+          {{ appName }}
+        </div>
+      </a>
+
+      <button class="button navbar-burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div> <!-- end of navbar-brand -->
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-start">
+        <!-- navbar items -->
+      </div>
+
+      <div class="navbar-end">
+        <!-- navbar items -->
+
+        <a class="navbar-item" href="{{ path_for('home') }}">
+          <span class="icon">
+            <i class="fa fa-home"></i>
+          </span>
+          Home
+        </a>
+
+      </div>
+    </div>
+  </nav>
+</div>
