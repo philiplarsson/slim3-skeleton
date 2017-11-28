@@ -11,7 +11,7 @@ if (file_exists(__DIR__ . '/../.env')) {
     $dotenv->load();
 }
 
-if (getenv('DEVELOPMENT')) {
+if (getenv('DEBUG') === 'true') {
     // Turn this on in development mode to
     // get information about errors (without it, Slim will at least log errors so
     // if you’re using the built in PHP webserver then you’ll see them in the
@@ -32,10 +32,17 @@ $container['config'] = function ($c) {
 };
 
 $container['view'] = function ($container) {
-    $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [
-        'cache' => false,
-        'debug' => true
-    ]);
+    if ($container->config->get('debug') === "true") {
+        $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [
+            'cache' => false,
+            'debug' => true
+        ]);
+    } else {
+        $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [
+            'cache' => __DIR__ . '/../cache/twig',
+            'debug' => false
+        ]);
+    }
 
     // Instantiate and add Slim specific extension
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
