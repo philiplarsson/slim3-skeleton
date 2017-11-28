@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'app-name' => 'ImageApp',
+    'app-name' => 'SkeletonApp',
     'debug' => getenv('DEBUG'),
 ];

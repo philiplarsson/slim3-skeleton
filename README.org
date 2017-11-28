@@ -1,4 +1,4 @@
-* Image Upload App
+* Skeleton App
 
 ** Symfony/dumper
 Use with
